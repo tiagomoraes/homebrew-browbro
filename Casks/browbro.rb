@@ -13,9 +13,14 @@ cask "browbro" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "BrowBro.app"
+
+  zap trash: [
+    "~/Library/Application Support/BrowBro",
+    "~/Library/Preferences/so.aca.browbro.plist",
+  ]
 
   caveats <<~CAVEATS
     BrowBro is not yet notarized, so macOS blocks it on first launch. To open it:
@@ -23,9 +28,4 @@ cask "browbro" do
     or run:
       xattr -dr com.apple.quarantine "#{appdir}/BrowBro.app"
   CAVEATS
-
-  zap trash: [
-    "~/Library/Preferences/so.aca.browbro.plist",
-    "~/Library/Application Support/BrowBro",
-  ]
 end
