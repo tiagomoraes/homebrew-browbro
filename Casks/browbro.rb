@@ -1,6 +1,6 @@
 cask "browbro" do
-  version "0.1.2"
-  sha256 "0b440c1cd99d24263dbe93b8d81ac695a4eaa5eb6692f7ee8aca3fced9f9ac01"
+  version "0.1.4"
+  sha256 "8c218c2e3e7bb83f8675f9cf09a96213561b97a5d1287d5ff7bb9ea2129bceef"
 
   url "https://github.com/tiagomoraes/browbro/releases/download/v#{version}/BrowBro.dmg",
       verified: "github.com/tiagomoraes/browbro/"
