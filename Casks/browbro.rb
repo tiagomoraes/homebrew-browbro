@@ -1,6 +1,6 @@
 cask "browbro" do
-  version "0.1.6"
-  sha256 "6220d137b1162a17e6ee2470d2ce24e955393e6d3cddcabcceb532ce2900dde9"
+  version "0.1.7"
+  sha256 "95b0fa09a8ef9436ed52eb1d5ffae695fa1d86fb45a92c2bf59aa4050cf8c9db"
 
   url "https://github.com/tiagomoraes/browbro/releases/download/v#{version}/BrowBro.dmg",
       verified: "github.com/tiagomoraes/browbro/"
@@ -13,6 +13,8 @@ cask "browbro" do
     strategy :github_latest
   end
 
+  auto_updates true
+
   depends_on macos: :sonoma
 
   app "BrowBro.app"
@@ -21,11 +23,4 @@ cask "browbro" do
     "~/Library/Application Support/BrowBro",
     "~/Library/Preferences/so.aca.browbro.plist",
   ]
-
-  caveats <<~CAVEATS
-    BrowBro is not yet notarized, so macOS blocks it on first launch. To open it:
-      System Settings, then Privacy & Security, then click "Open Anyway",
-    or run:
-      xattr -dr com.apple.quarantine "#{appdir}/BrowBro.app"
-  CAVEATS
 end
