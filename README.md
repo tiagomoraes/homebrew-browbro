@@ -14,6 +14,5 @@ brew tap tiagomoraes/browbro
 brew install --cask browbro
 ```
 
-BrowBro is not yet notarized, so on first launch open **System Settings > Privacy
-& Security** and click **Open Anyway** (or run
-`xattr -dr com.apple.quarantine "/Applications/BrowBro.app"`).
+BrowBro is signed with an Apple Developer ID and notarized by Apple, so it opens
+without a Gatekeeper warning.
